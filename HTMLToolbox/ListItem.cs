@@ -3,7 +3,7 @@ namespace Hinzberg.HTMLToolbox
 {
 	public class ListItem : IHTMLRenderable
 	{
-        private string TextContent { get; set; }
+        public string TextContent { get; set; }
 
         public ListItem()
 		{

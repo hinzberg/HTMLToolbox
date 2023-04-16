@@ -43,7 +43,7 @@ namespace Hinzberg.HTMLToolbox
                 case HeadlineSize.Size6:
                     return $"<h6>{TextContent}</h6>";
             }
-            return $"<h1>{TextContent}</h1>";
+            return $"<h1>{TextContent}</h1>{Environment.NewLine}";
         }
     }
 }

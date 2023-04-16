@@ -12,8 +12,21 @@ One of the great advantages of HTML is nesting. Lists within paragraphs are just
 - Unordered List
 - Ordered List with different types (A,a,I,i,1)
 - Description List
+- Paragraph with text alignment (left, right, center, justify)
+- Blockquote
+- Cite
+- Table
 
 ### History
+
+#### 2023-04-16
+- Table added
+
+#### 2023-04-10
+- Paragraph added
+- Blockquote added
+- Cite added
+
 #### 2023-04-09
 - DescriptionList added
 

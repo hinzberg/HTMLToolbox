@@ -25,7 +25,7 @@ orderedList.Add(new ListItem(@"Ordered List Entry 2"));
 orderedList.Add(new ListItem(@"Ordered List Entry 3"));
 document.Add(orderedList);
 
-// Ordered List
+// Description List
 Headline headlineDescriptionList = new Headline(@"Description List", HeadlineSize.Size2);
 document.Add(headlineDescriptionList);
 
@@ -40,13 +40,35 @@ descriptionList.Add(new DescriptionListDescription("Tokiyo"));
 descriptionList.Add(new DescriptionListDescription("Rom"));
 document.Add(descriptionList);
 
+// Paragraph
+Headline paragraphs = new Headline(@"Paragraph", HeadlineSize.Size2);
+document.Add(paragraphs);
+document.Add(new Paragraph("Paragraph, Text alignment left", ParagraphAlignment.Left));
+document.Add(new Paragraph("Paragraph, Text alignment right", ParagraphAlignment.Right));
+document.Add(new Paragraph("Paragraph, Text alignment center", ParagraphAlignment.Center));
+document.Add(new Paragraph("Paragraph, Text alignment justify", ParagraphAlignment.Justify));
 
+// Block Quotation and Cite
+Headline blockQuotation = new Headline(@"Block Quotation and Cite", HeadlineSize.Size2);
+document.Add(blockQuotation);
+document.Add(new BlockQuote("The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom."));
+document.Add(new Cite("- Isaac Asimov"));
 
-
-
-
-
-
+// Table
+Headline tableQuotation = new Headline(@"Table", HeadlineSize.Size2);
+document.Add(tableQuotation);
+Table table = new Table(3, 2);
+var p1 = new Paragraph("1. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.");
+var p2 = new Paragraph("2. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+var p3 = new Paragraph("3. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+var p4 = new Paragraph("4. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.");
+table.AddCell(new TableCell(0, 0, p1));
+table.AddCell(new TableCell(0, 1, p2));
+table.AddCell(new TableCell(1, 0, p3));
+table.AddCell(new TableCell(1, 1, p4));
+table.AddCell(new TableCell(2, 0, descriptionList));
+table.AddCell(new TableCell(2, 1, orderedList));
+document.Add(table);
 
 Console.Write(document.HTMLContent);
 
